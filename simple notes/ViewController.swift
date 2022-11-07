@@ -14,11 +14,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var okButton: UIButton!
     @IBOutlet weak var fieldContent: UITextField!
     
-    var rowNumber: Int = 0
     var rowContent: [String] = []
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowNumber
+        return rowContent.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -38,7 +37,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
                 tableView.performBatchUpdates {
                     self.rowContent.remove(at: indexPath.row)
-                    self.rowNumber = self.rowContent.count
                 }
         
                 boolAction(true)
@@ -65,7 +63,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         rowContent.append(fieldContent.text!)
         fieldContent.text = ""
         
-        rowNumber = rowContent.count
         tableView.reloadData()
     }
     

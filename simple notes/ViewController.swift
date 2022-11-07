@@ -40,10 +40,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
 
     @IBAction func okClick(_ sender: UIButton) {
+        guard fieldContent.text != nil && fieldContent.text != "" else {return}
+        
         rowNumber += 1
-        if fieldContent.text != nil {
-            rowContent.append(fieldContent.text!)
-        }
+        rowContent.append(fieldContent.text!)
         tableView.reloadData()
     }
     

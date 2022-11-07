@@ -29,6 +29,25 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+            let removeLine =   UIContextualAction(style: .destructive, title: nil) { action, view, boolAction in
+        
+                tableView.performBatchUpdates {
+                        
+                }
+        
+                boolAction(true)
+            }
+            
+            removeLine.image = UIImage(systemName: "trash")
+            return UISwipeActionsConfiguration(actions: [removeLine])
+    }
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

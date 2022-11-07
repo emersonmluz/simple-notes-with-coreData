@@ -37,7 +37,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             let removeLine =   UIContextualAction(style: .destructive, title: nil) { action, view, boolAction in
         
                 tableView.performBatchUpdates {
-                        
+                    self.rowContent.remove(at: indexPath.row)
+                    self.rowNumber -= 1
                 }
         
                 boolAction(true)
@@ -63,6 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         rowNumber += 1
         rowContent.append(fieldContent.text!)
+        fieldContent.text = ""
         tableView.reloadData()
     }
     

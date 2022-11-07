@@ -37,6 +37,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
                 tableView.performBatchUpdates {
                     self.rowContent.remove(at: indexPath.row)
+                    tableView.deleteRows(at: [indexPath], with: .fade)
                 }
         
                 boolAction(true)

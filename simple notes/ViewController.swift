@@ -38,7 +38,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
                 tableView.performBatchUpdates {
                     self.rowContent.remove(at: indexPath.row)
-                    self.rowNumber -= 1
+                    self.rowNumber = self.rowContent.count
                 }
         
                 boolAction(true)
@@ -62,9 +62,10 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBAction func okClick(_ sender: UIButton) {
         guard fieldContent.text != nil && fieldContent.text != "" else {return}
         
-        rowNumber += 1
         rowContent.append(fieldContent.text!)
         fieldContent.text = ""
+        
+        rowNumber = rowContent.count
         tableView.reloadData()
     }
     

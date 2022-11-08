@@ -24,6 +24,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
         
         cell.textLabel?.text = String(describing: indexPath.row + 1) + " " + rowContent[indexPath.row]
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.minimumScaleFactor = 20
         
         return cell
     }

@@ -70,9 +70,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         rowContent.append(fieldContent.text!)
         fieldContent.text = ""
         
-        tableView.reloadData()
-        
         dismissKeyboard()
+        
+        tableView.reloadData()
     }
     
     @objc func dismissKeyboard() {

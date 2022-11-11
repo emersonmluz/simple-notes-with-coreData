@@ -58,6 +58,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        let touch = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(touch)
         // Do any additional setup after loading the view.
     }
 
@@ -68,6 +71,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         fieldContent.text = ""
         
         tableView.reloadData()
+        
+        dismissKeyboard()
+    }
+    
+    @objc func dismissKeyboard() {
+        fieldContent.endEditing(true)
     }
     
 }

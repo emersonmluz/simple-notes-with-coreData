@@ -1,5 +1,4 @@
 import UIKit
-import Foundation
 
 extension ViewController: UITableViewDataSource {
     
@@ -30,6 +29,7 @@ extension ViewController: UITableViewDelegate {
                 tableView.performBatchUpdates {
                     self.notes.remove(at: indexPath.row)
                     tableView.deleteRows(at: [indexPath], with: .fade)
+                    self.effectDeleteNotes?.play()
                     tableView.reloadData()
                 }
         

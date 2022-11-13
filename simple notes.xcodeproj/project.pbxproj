@@ -14,6 +14,8 @@
 		EE0C2164291981D6002AE8AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE0C2163291981D6002AE8AD /* Assets.xcassets */; };
 		EE0C2167291981D6002AE8AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE0C2165291981D6002AE8AD /* LaunchScreen.storyboard */; };
 		EE3A9AD829219EEF005C711F /* extensionTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9AD729219EEF005C711F /* extensionTableView.swift */; };
+		EE3A9AE12921ABFE005C711F /* deleteEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE3A9ADF2921ABFE005C711F /* deleteEffect.wav */; };
+		EE3A9AE22921ABFE005C711F /* noteEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE3A9AE02921ABFE005C711F /* noteEffect.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		EE0C2166291981D6002AE8AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE0C2168291981D6002AE8AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3A9AD729219EEF005C711F /* extensionTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensionTableView.swift; sourceTree = "<group>"; };
+		EE3A9ADF2921ABFE005C711F /* deleteEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = deleteEffect.wav; path = "simple notes/Effect/deleteEffect.wav"; sourceTree = SOURCE_ROOT; };
+		EE3A9AE02921ABFE005C711F /* noteEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = noteEffect.wav; path = "simple notes/Effect/noteEffect.wav"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,16 +62,42 @@
 		EE0C2159291981D4002AE8AD /* simple notes */ = {
 			isa = PBXGroup;
 			children = (
+				EE3A9AE32921AC09005C711F /* Effect */,
+				EE3A9ADD2921AB48005C711F /* View */,
+				EE3A9ADE2921AB66005C711F /* Storyboard */,
 				EE0C215A291981D4002AE8AD /* AppDelegate.swift */,
 				EE0C215C291981D4002AE8AD /* SceneDelegate.swift */,
-				EE0C215E291981D4002AE8AD /* ViewController.swift */,
 				EE3A9AD729219EEF005C711F /* extensionTableView.swift */,
-				EE0C2160291981D4002AE8AD /* Main.storyboard */,
 				EE0C2163291981D6002AE8AD /* Assets.xcassets */,
 				EE0C2165291981D6002AE8AD /* LaunchScreen.storyboard */,
 				EE0C2168291981D6002AE8AD /* Info.plist */,
 			);
 			path = "simple notes";
+			sourceTree = "<group>";
+		};
+		EE3A9ADD2921AB48005C711F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EE0C215E291981D4002AE8AD /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE3A9ADE2921AB66005C711F /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				EE0C2160291981D4002AE8AD /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		EE3A9AE32921AC09005C711F /* Effect */ = {
+			isa = PBXGroup;
+			children = (
+				EE3A9ADF2921ABFE005C711F /* deleteEffect.wav */,
+				EE3A9AE02921ABFE005C711F /* noteEffect.wav */,
+			);
+			path = Effect;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,6 +158,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3A9AE12921ABFE005C711F /* deleteEffect.wav in Resources */,
+				EE3A9AE22921ABFE005C711F /* noteEffect.wav in Resources */,
 				EE0C2167291981D6002AE8AD /* LaunchScreen.storyboard in Resources */,
 				EE0C2164291981D6002AE8AD /* Assets.xcassets in Resources */,
 				EE0C2162291981D4002AE8AD /* Main.storyboard in Resources */,

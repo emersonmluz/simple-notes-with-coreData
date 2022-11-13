@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Foundation
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var noteTextField: UITextField!
     
     var notes: [String] = []
+    var effectAddNotes: AVAudioPlayer?
+    var effectDeleteNotes: AVAudioPlayer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +25,16 @@ class ViewController: UIViewController {
         
         notesTableView.delegate = self
         notesTableView.dataSource = self
+        
+        do {
+            let addNotesPath = Bundle.main.path(forResource: "noteEffect", ofType: "wav")
+            let deleteNotesPath = Bundle.main.path(forResource: "deleteEffect", ofType: "wav")
+            
+            try effectAddNotes = AVAudioPlayer(contentsOf: URL(fileURLWithPath: addNotesPath!))
+            try effectDeleteNotes = AVAudioPlayer(contentsOf: URL(fileURLWithPath: deleteNotesPath!))
+        } catch {
+            print("Efeitos sonoros não encontrados")
+        }
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(touch)
@@ -36,7 +48,7 @@ class ViewController: UIViewController {
         noteTextField.text = ""
         
         dismissKeyboard()
-        
+        effectAddNotes?.play()
         notesTableView.reloadData()
     }
     

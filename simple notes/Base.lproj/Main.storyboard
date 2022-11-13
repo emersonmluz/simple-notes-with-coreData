@@ -55,7 +55,7 @@
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="okClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="h3U-5c-YHb"/>
+                                                    <action selector="addNoteButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Iq4-4S-ZYf"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -86,9 +86,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="fieldContent" destination="J2H-HN-cMJ" id="bKs-OD-9KX"/>
-                        <outlet property="okButton" destination="YCQ-PK-WkH" id="9pN-Gw-bHx"/>
-                        <outlet property="tableView" destination="ezc-h5-ech" id="N3t-10-lGZ"/>
+                        <outlet property="addNoteButton" destination="YCQ-PK-WkH" id="9pN-Gw-bHx"/>
+                        <outlet property="noteTextField" destination="J2H-HN-cMJ" id="bKs-OD-9KX"/>
+                        <outlet property="notesTableView" destination="ezc-h5-ech" id="N3t-10-lGZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

@@ -8,76 +8,40 @@
 import UIKit
 import Foundation
 
-class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ViewController: UIViewController {
     
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var okButton: UIButton!
-    @IBOutlet weak var fieldContent: UITextField!
+    @IBOutlet weak var notesTableView: UITableView!
+    @IBOutlet weak var addNoteButton: UIButton!
+    @IBOutlet weak var noteTextField: UITextField!
     
-    var rowContent: [String] = []
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return rowContent.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell")!
-        
-        cell.textLabel?.text = String(describing: indexPath.row + 1) + " " + rowContent[indexPath.row]
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.minimumScaleFactor = 20
-        
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-            let removeLine =   UIContextualAction(style: .destructive, title: nil) { action, view, boolAction in
-        
-                tableView.performBatchUpdates {
-                    self.rowContent.remove(at: indexPath.row)
-                    tableView.deleteRows(at: [indexPath], with: .fade)
-                    tableView.reloadData()
-                }
-        
-                boolAction(true)
-            }
-            
-            removeLine.image = UIImage(systemName: "trash")
-            return UISwipeActionsConfiguration(actions: [removeLine])
-    }
-
+    var notes: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        okButton.layer.cornerRadius = 10
+        addNoteButton.layer.cornerRadius = 10
         
-        tableView.delegate = self
-        tableView.dataSource = self
+        notesTableView.delegate = self
+        notesTableView.dataSource = self
         
         let touch = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
         view.addGestureRecognizer(touch)
         // Do any additional setup after loading the view.
     }
 
-    @IBAction func okClick(_ sender: UIButton) {
-        guard fieldContent.text != nil && fieldContent.text != "" else {return}
+    @IBAction func addNoteButton(_ sender: UIButton) {
+        guard noteTextField.text != nil && noteTextField.text != "" else {return}
         
-        rowContent.append(fieldContent.text!)
-        fieldContent.text = ""
+        notes.append(noteTextField.text!)
+        noteTextField.text = ""
         
         dismissKeyboard()
         
-        tableView.reloadData()
+        notesTableView.reloadData()
     }
     
     @objc func dismissKeyboard() {
-        fieldContent.endEditing(true)
+        noteTextField.endEditing(true)
     }
     
 }
-

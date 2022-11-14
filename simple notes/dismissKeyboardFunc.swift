@@ -3,7 +3,8 @@ import UIKit
 extension ViewController {
     
     @objc func dismissKeyboard() {
-        noteTextField.endEditing(true)
+        noteTextField.resignFirstResponder()
+        //também poderia ser noteTextField.endEditing(true)
     }
     
 }

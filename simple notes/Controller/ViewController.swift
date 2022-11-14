@@ -40,20 +40,5 @@ class ViewController: UIViewController {
         view.addGestureRecognizer(touch)
         // Do any additional setup after loading the view.
     }
-
-    @IBAction func addNoteButton(_ sender: UIButton) {
-        guard noteTextField.text != nil && noteTextField.text != "" else {return}
-        
-        notes.append(noteTextField.text!)
-        noteTextField.text = ""
-        
-        dismissKeyboard()
-        effectAddNotes?.play()
-        notesTableView.reloadData()
-    }
-    
-    @objc func dismissKeyboard() {
-        noteTextField.endEditing(true)
-    }
     
 }

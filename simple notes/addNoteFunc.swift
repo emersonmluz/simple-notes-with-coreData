@@ -8,5 +8,6 @@ extension ViewController {
         dismissKeyboard()
         effectAddNotes?.play()
         notesTableView.reloadData()
+        saveCache()
     }
 }

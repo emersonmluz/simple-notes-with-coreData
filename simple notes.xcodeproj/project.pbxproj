@@ -22,6 +22,8 @@
 		EE3A9B112923E199005C711F /* noteTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B102923E199005C711F /* noteTextFieldDelegate.swift */; };
 		EE3A9B132923E4FE005C711F /* addNoteFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B122923E4FE005C711F /* addNoteFunc.swift */; };
 		EE3A9B152923ED82005C711F /* saveCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B142923ED82005C711F /* saveCache.swift */; };
+		EE3A9B172923FAC7005C711F /* removeNoteFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B162923FAC7005C711F /* removeNoteFunc.swift */; };
+		EE3A9B19292404FD005C711F /* alertFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B18292404FD005C711F /* alertFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		EE3A9B102923E199005C711F /* noteTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteTextFieldDelegate.swift; sourceTree = "<group>"; };
 		EE3A9B122923E4FE005C711F /* addNoteFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNoteFunc.swift; sourceTree = "<group>"; };
 		EE3A9B142923ED82005C711F /* saveCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveCache.swift; sourceTree = "<group>"; };
+		EE3A9B162923FAC7005C711F /* removeNoteFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = removeNoteFunc.swift; sourceTree = "<group>"; };
+		EE3A9B18292404FD005C711F /* alertFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = alertFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,8 +121,10 @@
 			children = (
 				EE3A9AE629228EE8005C711F /* addNoteButtonClickAction.swift */,
 				EE3A9B122923E4FE005C711F /* addNoteFunc.swift */,
+				EE3A9B18292404FD005C711F /* alertFunc.swift */,
 				EE3A9AE429228E60005C711F /* dismissKeyboardFunc.swift */,
 				EE3A9B102923E199005C711F /* noteTextFieldDelegate.swift */,
+				EE3A9B162923FAC7005C711F /* removeNoteFunc.swift */,
 				EE3A9B142923ED82005C711F /* saveCache.swift */,
 				EE3A9AD729219EEF005C711F /* tableViewDataSource.swift */,
 				EE3A9B0E2923CEB1005C711F /* tableViewDelegate.swift */,
@@ -205,10 +211,12 @@
 				EE3A9B152923ED82005C711F /* saveCache.swift in Sources */,
 				EE0C215B291981D4002AE8AD /* AppDelegate.swift in Sources */,
 				EE3A9B0F2923CEB1005C711F /* tableViewDelegate.swift in Sources */,
+				EE3A9B19292404FD005C711F /* alertFunc.swift in Sources */,
 				EE0C215D291981D4002AE8AD /* SceneDelegate.swift in Sources */,
 				EE3A9AD829219EEF005C711F /* tableViewDataSource.swift in Sources */,
 				EE3A9AE729228EE8005C711F /* addNoteButtonClickAction.swift in Sources */,
 				EE3A9B132923E4FE005C711F /* addNoteFunc.swift in Sources */,
+				EE3A9B172923FAC7005C711F /* removeNoteFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

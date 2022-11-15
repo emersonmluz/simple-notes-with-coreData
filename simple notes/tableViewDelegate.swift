@@ -7,20 +7,10 @@ extension ViewController: UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let trashNote =   UIContextualAction(style: .destructive, title: nil) { action, view, boolAction in
         
-            let alert = UIAlertController(title: "Confirme", message: "Deseja remover essa nota?", preferredStyle: .alert)
+        let trashNote = UIContextualAction(style: .destructive, title: nil) { action, view, boolAction in
             
-            alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
-            alert.addAction(UIAlertAction(title: "Remover", style: .destructive) {_ in
-                self.notes.remove(at: indexPath.row)
-                tableView.deleteRows(at: [indexPath], with: .left)
-                self.effectDeleteNotes?.play()
-                tableView.reloadData()
-                self.saveCache()
-            })
-            
-            self.present(alert, animated: true)
+            self.alert(tableView: tableView, indexPath: indexPath)
             boolAction(true)
         }
             

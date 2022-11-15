@@ -9,22 +9,19 @@ extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let trashNote =   UIContextualAction(style: .destructive, title: nil) { action, view, boolAction in
         
-                tableView.performBatchUpdates {
-                    
-                    let alert = UIAlertController(title: "Confirme", message: "Deseja remover essa nota?", preferredStyle: .alert)
-                    
-                    alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
-                    alert.addAction(UIAlertAction(title: "Remover", style: .destructive) {_ in
-                        self.notes.remove(at: indexPath.row)
-                        tableView.deleteRows(at: [indexPath], with: .left)
-                        self.effectDeleteNotes?.play()
-                        tableView.reloadData()
-                    })
-                    self.present(alert, animated: true)
-                }
-        
-                boolAction(true)
-            }
+            let alert = UIAlertController(title: "Confirme", message: "Deseja remover essa nota?", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
+            alert.addAction(UIAlertAction(title: "Remover", style: .destructive) {_ in
+                self.notes.remove(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: .left)
+                self.effectDeleteNotes?.play()
+                tableView.reloadData()
+            })
+            
+            self.present(alert, animated: true)
+            boolAction(true)
+        }
             
         trashNote.image = UIImage(systemName: "trash")
         return UISwipeActionsConfiguration(actions: [trashNote])

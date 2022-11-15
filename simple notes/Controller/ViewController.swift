@@ -26,6 +26,8 @@ class ViewController: UIViewController {
         notesTableView.delegate = self
         notesTableView.dataSource = self
         
+        noteTextField.delegate = self
+        
         do {
             let addNotesPath = Bundle.main.path(forResource: "noteEffect", ofType: "wav")
             let deleteNotesPath = Bundle.main.path(forResource: "deleteEffect", ofType: "wav")

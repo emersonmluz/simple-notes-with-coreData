@@ -17,8 +17,10 @@
 		EE3A9AE12921ABFE005C711F /* deleteEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE3A9ADF2921ABFE005C711F /* deleteEffect.wav */; };
 		EE3A9AE22921ABFE005C711F /* noteEffect.wav in Resources */ = {isa = PBXBuildFile; fileRef = EE3A9AE02921ABFE005C711F /* noteEffect.wav */; };
 		EE3A9AE529228E60005C711F /* dismissKeyboardFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9AE429228E60005C711F /* dismissKeyboardFunc.swift */; };
-		EE3A9AE729228EE8005C711F /* addNoteButtonAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9AE629228EE8005C711F /* addNoteButtonAction.swift */; };
+		EE3A9AE729228EE8005C711F /* addNoteButtonClickAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9AE629228EE8005C711F /* addNoteButtonClickAction.swift */; };
 		EE3A9B0F2923CEB1005C711F /* tableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B0E2923CEB1005C711F /* tableViewDelegate.swift */; };
+		EE3A9B112923E199005C711F /* noteTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B102923E199005C711F /* noteTextFieldDelegate.swift */; };
+		EE3A9B132923E4FE005C711F /* addNoteFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3A9B122923E4FE005C711F /* addNoteFunc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,8 +36,10 @@
 		EE3A9ADF2921ABFE005C711F /* deleteEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = deleteEffect.wav; path = "simple notes/Effect/deleteEffect.wav"; sourceTree = SOURCE_ROOT; };
 		EE3A9AE02921ABFE005C711F /* noteEffect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = noteEffect.wav; path = "simple notes/Effect/noteEffect.wav"; sourceTree = SOURCE_ROOT; };
 		EE3A9AE429228E60005C711F /* dismissKeyboardFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dismissKeyboardFunc.swift; sourceTree = "<group>"; };
-		EE3A9AE629228EE8005C711F /* addNoteButtonAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNoteButtonAction.swift; sourceTree = "<group>"; };
+		EE3A9AE629228EE8005C711F /* addNoteButtonClickAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNoteButtonClickAction.swift; sourceTree = "<group>"; };
 		EE3A9B0E2923CEB1005C711F /* tableViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewDelegate.swift; sourceTree = "<group>"; };
+		EE3A9B102923E199005C711F /* noteTextFieldDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = noteTextFieldDelegate.swift; sourceTree = "<group>"; };
+		EE3A9B122923E4FE005C711F /* addNoteFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = addNoteFunc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,10 +113,12 @@
 		EE3A9AE829228F6F005C711F /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				EE3A9AE629228EE8005C711F /* addNoteButtonClickAction.swift */,
+				EE3A9B122923E4FE005C711F /* addNoteFunc.swift */,
+				EE3A9AE429228E60005C711F /* dismissKeyboardFunc.swift */,
+				EE3A9B102923E199005C711F /* noteTextFieldDelegate.swift */,
 				EE3A9AD729219EEF005C711F /* tableViewDataSource.swift */,
 				EE3A9B0E2923CEB1005C711F /* tableViewDelegate.swift */,
-				EE3A9AE429228E60005C711F /* dismissKeyboardFunc.swift */,
-				EE3A9AE629228EE8005C711F /* addNoteButtonAction.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -190,13 +196,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE3A9B112923E199005C711F /* noteTextFieldDelegate.swift in Sources */,
 				EE3A9AE529228E60005C711F /* dismissKeyboardFunc.swift in Sources */,
 				EE0C215F291981D4002AE8AD /* ViewController.swift in Sources */,
 				EE0C215B291981D4002AE8AD /* AppDelegate.swift in Sources */,
 				EE3A9B0F2923CEB1005C711F /* tableViewDelegate.swift in Sources */,
 				EE0C215D291981D4002AE8AD /* SceneDelegate.swift in Sources */,
 				EE3A9AD829219EEF005C711F /* tableViewDataSource.swift in Sources */,
-				EE3A9AE729228EE8005C711F /* addNoteButtonAction.swift in Sources */,
+				EE3A9AE729228EE8005C711F /* addNoteButtonClickAction.swift in Sources */,
+				EE3A9B132923E4FE005C711F /* addNoteFunc.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

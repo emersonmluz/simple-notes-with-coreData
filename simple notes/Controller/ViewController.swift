@@ -21,11 +21,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        notes = UserDefaults.standard.stringArray(forKey: "notes") ?? []
+        
         addNoteButton.layer.cornerRadius = 10
         
         notesTableView.delegate = self
         notesTableView.dataSource = self
-        
         noteTextField.delegate = self
         
         do {

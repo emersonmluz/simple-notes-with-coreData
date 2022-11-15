@@ -17,6 +17,7 @@ extension ViewController: UITableViewDelegate {
                 tableView.deleteRows(at: [indexPath], with: .left)
                 self.effectDeleteNotes?.play()
                 tableView.reloadData()
+                self.saveCache()
             })
             
             self.present(alert, animated: true)

@@ -43,8 +43,7 @@ class ViewController: UIViewController {
     }
     
     @objc func dismissKeyboard () {
-        noteTextField.resignFirstResponder()
-        //também poderia ser noteTextField.endEditing(true)
+        noteTextField.endEditing(true)
     }
     
     func touchScreen () {

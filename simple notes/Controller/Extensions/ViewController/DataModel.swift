@@ -24,11 +24,11 @@ extension ViewController {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let entity = NSEntityDescription.entity(forEntityName: "Notes", in: managedContext)!
-        let person = NSManagedObject(entity: entity, insertInto: managedContext)
-        person.setValue(note, forKey: "textNotes")
+        let postIt = NSManagedObject(entity: entity, insertInto: managedContext)
+        postIt.setValue(note, forKey: "textNotes")
         do {
             try managedContext.save()
-            notes.append(person)
+            notes.append(postIt)
         } catch let error as NSError {
             print(error)
         }

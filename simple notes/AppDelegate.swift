@@ -8,6 +8,9 @@
 import UIKit
 import CoreData
 
+var dataModel = DataModel()
+var notes: [NSManagedObject] = []
+
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 

@@ -8,8 +8,8 @@
 import UIKit
 import CoreData
 
-extension ViewController {
-    func loadDataModel() {
+class DataModel {
+    func loadData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "Notes")
@@ -32,11 +32,9 @@ extension ViewController {
         } catch let error as NSError {
             print(error)
         }
-        //effectAddNotes?.play()
-        notesTableView.reloadData()
     }
     
-    func removeNote(_ row: Int) {
+    func delete(_ row: Int) {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext
         do {

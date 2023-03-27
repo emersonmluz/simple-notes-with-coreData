@@ -9,6 +9,10 @@ import UIKit
 import CoreData
 
 class DataModel {
+    
+    static var shared = DataModel()
+    var notes: [NSManagedObject] = []
+    
     func loadData() {
         guard let appDelegate = UIApplication.shared.delegate as? AppDelegate else {return}
         let managedContext = appDelegate.persistentContainer.viewContext

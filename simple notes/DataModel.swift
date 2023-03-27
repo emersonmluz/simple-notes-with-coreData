@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class DataModel {
+final class DataModel {
     
     static var shared = DataModel()
     var notes: [NSManagedObject] = []

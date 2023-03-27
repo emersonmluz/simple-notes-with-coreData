@@ -8,7 +8,7 @@
 import UIKit
 import CoreData
 
-class DoItViewController: UIViewController {
+final class DoItViewController: UIViewController {
     
     lazy var containerView: UIView = {
         let view = UIView()
@@ -19,7 +19,7 @@ class DoItViewController: UIViewController {
         return view
     }()
     
-    lazy var noteTextField: UITextField = {
+    private lazy var noteTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
         textField.backgroundColor = UIColor.white
@@ -28,7 +28,7 @@ class DoItViewController: UIViewController {
         return textField
     }()
     
-    lazy var plusButton: UIButton = {
+    private lazy var plusButton: UIButton = {
        let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setImage(UIImage(systemName: "plus"), for: .normal)
@@ -37,7 +37,7 @@ class DoItViewController: UIViewController {
         return button
     }()
     
-    lazy var notesTableView: UITableView = {
+    private lazy var notesTableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -50,7 +50,7 @@ class DoItViewController: UIViewController {
         setupInit()
     }
     
-    func setupInit() {
+    private func setupInit() {
         view.backgroundColor = UIColor.white
         textFieldSetup()
         tableViewSetup()
@@ -58,24 +58,24 @@ class DoItViewController: UIViewController {
         DataModel.shared.loadData()
     }
     
-    func tableViewSetup() {
+    private func tableViewSetup() {
         notesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         notesTableView.delegate = self
         notesTableView.dataSource = self
     }
     
-    func textFieldSetup() {
+    private func textFieldSetup() {
         noteTextField.delegate = self
     }
     
-    func setComponents() {
+    private func setComponents() {
         view.addSubview(containerView)
         containerView.addSubview(noteTextField)
         containerView.addSubview(plusButton)
         view.addSubview(notesTableView)
     }
     
-    func setConstraints() {
+    private func setConstraints() {
         NSLayoutConstraint.activate([
             containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
@@ -98,23 +98,23 @@ class DoItViewController: UIViewController {
         ])
     }
     
-    func touchScreen () {
+    private func touchScreen () {
         let touch = UITapGestureRecognizer(target: view, action: #selector(UIView.endEditing(_:)))
         view.addGestureRecognizer(touch)
     }
     
-    @objc func addNoteButtonClick(_ sender: UITapGestureRecognizer) {
+    @objc private func addNoteButtonClick(_ sender: UITapGestureRecognizer) {
         addNote()
     }
     
-    func addNote() {
+    private func addNote() {
         guard let note = noteTextField.text, noteTextField.text != nil, noteTextField.text != "" else {return}
         DataModel.shared.save(note)
         notesTableView.reloadData()
         view.endEditing(true)
     }
     
-    func alert (tableView: UITableView, indexPath: IndexPath) {
+    private func alert (tableView: UITableView, indexPath: IndexPath) {
         let alert = UIAlertController(title: "Confirme", message: "Deseja remover essa nota?", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Cancelar", style: .cancel))
         alert.addAction(UIAlertAction(title: "Remover", style: .destructive) {_ in

@@ -80,7 +80,7 @@ final class DoItViewController: UIViewController {
             containerView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             containerView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             containerView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            containerView.heightAnchor.constraint(equalToConstant: 80),
+            containerView.heightAnchor.constraint(equalToConstant: 90),
             
             noteTextField.centerYAnchor.constraint(equalTo: containerView.centerYAnchor),
             noteTextField.leadingAnchor.constraint(equalTo: containerView.leadingAnchor, constant: 20),
